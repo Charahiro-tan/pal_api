@@ -1,12 +1,26 @@
 [project]
 name = "pal_api"
-version = "0.1.0"
-description = "Default template for PDM package"
+description = "API Wrapper for Palworld Dedicated Server"
 authors = [{ name = "Charahiro-tan", email = "charahiro.tan@gmail.com" }]
-dependencies = ["aiohttp>=3.9.3"]
+dependencies = ["aiohttp>=3.9.4"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
+dynamic = ["version"]
+urls = { "homepage" = "https://github.com/Charahiro-tan/pal_api" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Japanese",
+    "Programming Language :: Python :: 3",
+]
+
+
+[tool.pdm.dev-dependencies]
+dev = ["ujson>=5.9.0"]
+
+[tool.pdm.version]
+source = "file"
+path = "src/pal_api/__init__.py"
 
 
 [build-system]
@@ -17,8 +31,6 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 
-[tool.pdm.dev-dependencies]
-dev = ["ujson>=5.9.0"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["E402", "F401"]
